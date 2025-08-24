@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pacientes</title>
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <a href="{% url 'novo_paciente' %}">Adicionar Novo Paciente</a>
+
+    {% if pacientes %}
+        <ul>
+        {% for paciente in pacientes %}
+            <li>{{ paciente.nome }} - {{ paciente.email }} - {{ paciente.telefone }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum paciente cadastrado ainda.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+ClinicaApp/
+├── pacientes/
+│   ├── migrations/
+│   ├── templates/
+│   │   └── pacientes/
+│   │       ├── lista_pacientes.html
+│   │       └── novo_paciente.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+└── ...

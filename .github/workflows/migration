@@ -1,5 +1,0 @@
-python manage.py makemigrations pacientes
-Migrations for 'pacientes':
-  pacientes\migrations\0001_initial.py
-    - Create model Paciente
-python manage.py migrate

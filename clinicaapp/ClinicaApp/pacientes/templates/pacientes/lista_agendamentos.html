@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Agendamentos</title>
+</head>
+<body>
+    <h1>Agendamentos</h1>
+    <a href="{% url 'lista_pacientes' %}">Voltar para a lista de pacientes</a>
+    <a href="{% url 'novo_agendamento' %}">Adicionar Novo Agendamento</a>
+
+    {% if agendamentos %}
+        <ul>
+        {% for agendamento in agendamentos %}
+            <li>
+                <strong>Paciente:</strong> {{ agendamento.paciente.nome }} <br>
+                <strong>Data e Hora:</strong> {{ agendamento.data_hora }} <br>
+                <strong>Observações:</strong> {{ agendamento.observacoes|default:"Nenhuma observação." }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum agendamento encontrado.</p>
+    {% endif %}
+</body>
+</html>
+<body>
+    <h1>Agendamentos</h1>
+    <a href="{% url 'lista_pacientes' %}">Voltar para a lista de pacientes</a>
+    <a href="{% url 'novo_agendamento' %}">Adicionar Novo Agendamento</a>
+
+    {% if agendamentos %}
+        <ul>
+        {% for agendamento in agendamentos %}
+            <li>
+                <strong>Paciente:</strong> {{ agendamento.paciente.nome }} <br>
+                <strong>Data e Hora:</strong> {{ agendamento.data_hora }} <br>
+                <strong>Observações:</strong> {{ agendamento.observacoes|default:"Nenhuma observação." }} <br>
+                <a href="{% url 'editar_agendamento' agendamento.pk %}">Editar</a> |
+                <a href="{% url 'excluir_agendamento' agendamento.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum agendamento encontrado.</p>
+    {% endif %}
+</body>
+</html>

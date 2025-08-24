@@ -1,0 +1,3 @@
+cd ClinicaApp
+python manage.py startapp pacientes
+python manage.py migrate

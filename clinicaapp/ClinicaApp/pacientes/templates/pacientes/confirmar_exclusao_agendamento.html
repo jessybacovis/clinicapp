@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Exclusão</title>
+</head>
+<body>
+    <h1>Confirmar Exclusão</h1>
+    <p>Você tem certeza que deseja excluir o agendamento de **{{ agendamento.paciente.nome }}** em **{{ agendamento.data_hora }}**?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sim, Excluir</button>
+        <a href="{% url 'lista_agendamentos' %}">Não, Cancelar</a>
+    </form>
+</body>
+</html>

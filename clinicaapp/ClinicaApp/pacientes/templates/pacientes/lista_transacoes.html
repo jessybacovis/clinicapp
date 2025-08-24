@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro</title>
+</head>
+<body>
+    <h1>Módulo Financeiro</h1>
+    <h2>Receita Total: R$ {{ total_receita|floatformat:2 }}</h2>
+    <a href="{% url 'nova_transacao' %}">Adicionar Nova Transação</a>
+    <hr>
+    
+    <h3>Últimas Transações</h3>
+    {% if transacoes %}
+        <ul>
+        {% for transacao in transacoes %}
+            <li>
+                <strong>Paciente:</strong> {{ transacao.paciente.nome }} <br>
+                <strong>Descrição:</strong> {{ transacao.descricao }} <br>
+                <strong>Valor:</strong> R$ {{ transacao.valor|floatformat:2 }} <br>
+                <strong>Data:</strong> {{ transacao.data }} <br>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma transação registrada.</p>
+    {% endif %}
+</body>
+</html>

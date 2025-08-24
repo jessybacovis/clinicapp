@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Agendamento</title>
+</head>
+<body>
+    <h1>Novo Agendamento</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar Agendamento</button>
+    </form>
+    <a href="{% url 'lista_agendamentos' %}">Voltar para a lista</a>
+</body>
+</html>

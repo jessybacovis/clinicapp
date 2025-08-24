@@ -1,0 +1,18 @@
+{% extends 'pacientes/base.html' %}
+
+{% block title %}Lista de Pacientes{% endblock %}
+
+{% block content %}
+    <h1>Lista de Pacientes</h1>
+    <a href="{% url 'novo_paciente' %}">Adicionar Novo Paciente</a>
+
+    {% if pacientes %}
+        <ul>
+        {% for paciente in pacientes %}
+            <li>{{ paciente.nome }} - {{ paciente.email }} - {{ paciente.telefone }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum paciente cadastrado ainda.</p>
+    {% endif %}
+{% endblock %}

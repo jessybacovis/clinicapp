@@ -1,0 +1,2 @@
+python manage.py makemigrations pacientes
+python manage.py migrate

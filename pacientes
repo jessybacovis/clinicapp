@@ -1,0 +1,2 @@
+cd ClinicaApp
+python manage.py startapp pacientes
